@@ -19,6 +19,14 @@ input, select, textarea{
     margin-bottom: 7px;
 }
 
+#label-nombre{
+    display: block;
+}
+
+h1{
+    margin: 10px 0px;
+}
+
 textarea{
     width: 200px;
     height: 120px;
@@ -32,4 +40,16 @@ textarea{
     display: block;
     width: 200px;
     margin-top: 7px;
+}
+
+#btnContraste{
+    margin-bottom: 7px;
+}
+
+#btnFuente{
+    margin-bottom: 7px;
+}
+
+body.fontsize{
+    font-size: 20px;
 }
