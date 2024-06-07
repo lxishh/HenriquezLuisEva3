@@ -1,3 +1,35 @@
 *{
-    background-color: antiquewhite;
+    margin: auto;
+    text-align: center;
+}
+
+body div{
+    background-color: #fff;
+    color: black;
+}
+
+.modooscuro{
+    background-color: black;
+    color: #fff;
+}
+
+input, select, textarea{
+    display: block;
+    margin: auto;
+    margin-bottom: 7px;
+}
+
+textarea{
+    width: 200px;
+    height: 120px;
+}
+
+#terminos{
+    display: inline;
+}
+
+#btnRegistrar{
+    display: block;
+    width: 200px;
+    margin-top: 7px;
 }

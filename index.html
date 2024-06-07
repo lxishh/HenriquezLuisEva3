@@ -8,6 +8,41 @@
     <script type="module" src="assets/js/script.js"></script>
 </head>
 <body>
+
+    <div id="formulario">
+
     <h1>Formulario</h1>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre">
+
+    <label for="correo">Correo:</label>
+    <input type="email" name="correo" id="correo">
+
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" name="contraseña" id="contraseña">
+
+    <label for="telefono">Teléfono:</label>
+    <input type="number" name="telefono" id="telefono">
+
+    <label for="fecha">Fecha de nacimiento:</label>
+    <input type="date" name="fecha" id="fecha">
+
+    <label for="genero">Genero:</label>
+    <select name="genero" id="genero">
+        <option>Hombre</option>
+        <option>Mujer</option>
+        <option>Otro</option>
+    </select>
+
+    <label for="biografia">Breve descripción de ti:</label>
+    <textarea id="biografia"></textarea>
+
+    <label for="terminos">Acepta terminos y condiciones:</label>
+    <input type="checkbox" name="terminos" id="terminos">
+
+    <button type="button" id="btnRegistrar">Registrar</button>
+
+    </div>
 </body>
 </html>
