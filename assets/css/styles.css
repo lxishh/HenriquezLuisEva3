@@ -1,63 +1,5 @@
-/* *{
-    margin: auto;
-    text-align: center;
-}
-
-.modoclaro{
-    background-color: #fff;
-    color: black;
-}
-
-.modooscuro{
-    background-color: black;
-    color: #fff;
-}
-
-input, select, textarea{
-    display: block;
-    margin: auto;
-    margin-bottom: 7px;
-}
-
-#label-nombre{
-    display: block;
-}
-
-h1{
-    margin: 10px 0px;
-}
-
-textarea{
-    width: 200px;
-    height: 120px;
-}
-
-#terminos{
-    display: inline;
-}
-
-#btnRegistrar{
-    display: block;
-    width: 200px;
-    margin-top: 7px;
-}
-
-#btnContraste{
-    margin-bottom: 7px;
-}
-
-#btnFuente{
-    margin-bottom: 7px;
-}
-
-#cambiarfuente{
-    font-size: 20px;
-} */
-
-
-
-
 /* A continuación se importara el css aplicado en la evaluación 2 */
+
 
 /* Se le quita el margin a la pagina en general y se le asigna la fuente */
 *{
@@ -68,7 +10,7 @@ textarea{
 /* header decorativo */
 #pheader{
     text-align: center;
-    background-color:rgb(1, 85, 1)
+    background-color:gray
 }
 
 
@@ -99,14 +41,12 @@ textarea{
 y ademas se le asigna el color de fondo */
 #pmain{
     margin: auto;
-    background-color:ghostwhite;
 }
 
 
 
 /* se define un estilo predeterminado para cada H2 que se encuentre dentro de una seccion */
 section h2{
-    font-size: 20px;
     margin-top: 13px;
     margin-bottom: 6px;
 }
@@ -175,8 +115,7 @@ iframe{
     width: 45%;
     margin: auto;
     margin-bottom: 25px;
-    box-shadow: 5px 10px black;
-    background-color:lightgray
+    background-color:gray;
 }
 
 
@@ -243,4 +182,21 @@ iframe{
 
 #pfooter a{
     text-decoration: underline;
+}
+
+
+/* A continuacion se aplica la inclusividad */
+
+.modo-claro{
+    background-color:#fff;
+    color: black;
+}
+
+.modo-oscuro{
+    background-color: black;
+    color: #fff
+}
+
+body.fontsize{
+    font-size: x-large;
 }
