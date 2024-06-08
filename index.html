@@ -8,87 +8,109 @@
     <script type="module" src="assets/js/script.js"></script>
     <script type="module" src="assets/js/firebase.js"></script>
 </head>
+
 <body>
+
+    <!-- Header decorativo con el titulo de la pagina. -->
     <header id="pheader">
         <h1>NotCo</h1>
     </header>
 
+    <!-- nav para navegar entre las diferentes secciones;
+        para realizar esto se creo una lista desorganizada. -->
     <nav id="pnav">
         <ul class="opcionesmenu">
-            <li><a href="#impacto">Impacto</a></li>
-            <li><a href="#historia">Historia</a></li>
+            <li><a href="#problema">Problema</a></li>
+            <li><a href="#solucion">Solución</a></li>
             <li><a href="#mision">Misión</a></li>
-            <li><a href="#video">Video explicativo</a></li>
+            <li><a href="#video">Proceso</a></li>
             <li><a href="#formulario">Contáctanos</a></li>
         </ul>
     </nav>
 
+    <!-- main que se utilizara de etiqueta "padre" para "guardar" y manipular las secciones creadas posteriormente en la pagina. -->
     <main id="pmain">
 
-        <section id="impacto">
+        <!-- Se crearan tres SECCIONES que tendran la misma estructura (id, h2, img, p);
+            un H2 donde se escribira algo llamativo y relacionado a lo que se hablara;
+            una etiqueta de IMAGEN que se obtiene a traves de una carpeta local:
+            y por ultimo un PARRAFO donde se agregara el texto relacionado  -->
+        <section id="problema">
             <h2>La producción de productos animales daña a nuestro planeta</h2>
-            <img src="assets/img/problema.png" width="400px 40px">
+            <img src="assets/img/problema.png" width="400px">
             <p>Entonces, este es el tema: la producción mundial de alimentos, que se basa en la ganadería, usa más de un tercio de la superficie terrestre, y emite más CO2 que todo el transporte mundial en su conjunto. Sigue estándares ineficientes y abusivos, sin mencionar el mal uso del agua, la tierra y la energía.
-
                 Es la causa principal de la deforestación, de los gases de efecto invernadero y, prácticamente, de toda la destrucción medioambiental conocida por las personas. Si queremos que nuestro planeta sobreviva, tenemos que cambiar la forma en la que se hace nuestra comida.</p>
         </section>
 
-        <section id="historia">
-            <h2>Reinventamos la industria alimentaria</h2>
-            <img src="assets/img/historia.jpg" width="400px 40px">
+        <section id="solucion">
+            <h2>Sacar a los animales de la ecuación</h2>
+            <img src="assets/img/historia.jpg" width="550">
             <p>Cuando descubrimos que al sacar a los animales de la producción de alimentos protegeríamos al planeta, no nos preguntamos el por qué. Dijimos, Why Not.
-
                 La solución fue simple (para nuestros genios que aman la comida), crear un algoritmo que pueda aprender combinaciones infinitas de plantas para replicar los productos animales y que su sabor sea mucho mejor.</p>
         </section>
 
         <section id="mision">
-            <h2>¿Cuál es la misión de NotCo?</h2>
-            <img src="assets/img/misión.png" width="400px 40px">
+            <h2>Cambiando el día a día</h2>
+            <img src="assets/img/misión.png" width="400px">
             <p>Hacemos un llamado a todos los fans de la comida y también a la industria alimentaria. Estamos aquí para hacer que las productos en base a plantas sean accesibles para todos, en cualquier lugar. Cambiemos el día a día con un bocado delicioso y a buen precio a la vez.</p>
         </section>
 
+        <!-- Se creara una SECCION con un H2 y un VIDEO, para agregar este se hara uso de la etiqueta "IFRAME"; 
+            esta ETIQUETA y todos sus ATRIBUTOS nos la da el propio youtube, por lo cual solamente se debe copiar y pegar). -->
         <section id="video">
-            <h2></h2>
+            <h2>Conoce a Giuseppe, la tecnología que hace realidad todo esto</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/b7hqUBmKJR0?si=KSWoFi4Ttti2kT4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
 
+        <!-- a continuacion se creara una SECCION de FORMULARIO, en la cual se incluiran LABELS, INPUT, SELECT, TEXTAREA Y BUTTON;
+            cabe recalcar que se utilizaran distintos TIPOS de input para cada campo. -->
         <section id="formulario">
-            <h2>Contáctanos</h2>
+            <h2>¡Hazte socio/a de NotCo!</h2>
+            <h3>Formulario de inscripción</h3>
+            <h4>*Todos los campos son requeridos</h4>
             <form> 
-                <label for="nombre" id="label-nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre">
 
-                <label for="correo">Correo:</label>
-                <input type="email" name="correo" id="correo">
+                <label for="nombre">Nombre*</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" required>
 
-                <label for="contraseña">Contraseña:</label>
-                <input type="password" name="contraseña" id="contraseña">
+                <label for="correo">Correo*</label>
+                <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo" required>
 
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" name="telefono" id="telefono">
+                <label for="contraseña">Contraseña*</label>
+                <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu contraseña">
 
-                <label for="fecha">Fecha de nacimiento:</label>
+                <label for="telefono">Teléfono*</label>
+                <input type="tel" name="telefono" id="telefono" placeholder="Ingresa tu teléfono">
+
+                <label for="fecha">Fecha de nacimiento</label>
                 <input type="date" name="fecha" id="fecha">
 
-                <label for="genero">Genero:</label>
+                <label for="genero">Género</label>
                 <select name="genero" id="genero">
-                    <option>Hombre</option>
-                    <option>Mujer</option>
-                    <option>Otro</option>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                    <option>No especifica</option>
                 </select>
 
-                <label for="biografia">Breve descripción de ti:</label>
-                <textarea id="biografia"></textarea>
+                <label for="areatexto">Biografia</label>
+                <textarea id="areatexto" placeholder="Escribe una breve descripción de ti"></textarea>
 
-                <label for="terminos">Acepta terminos y condiciones:</label>
+                <div id="div-termino"> 
+                <label for="terminos">Acepta terminos y condiciones*</label>
                 <input type="checkbox" name="terminos" id="terminos">
+                </div>
 
-                <button type="submit" id="btnRegistrar">Registrar</button>
+                <button type="button" id="btnRegistrar">Registrar</button>
+
             </form>
+
         </section>
 
     </main>
 
+    <!-- Se crea un footer en donde se agregan las redes sociales de la empresa, haciendo uso de la etiqueta "a" (enlaces);
+        ademas se le asigna el atributo de target="_blank" para que se abran en una nueva ventana;
+        "&copy;" hace referencia al signo de copyright. -->
     <footer id="pfooter">
         <p>&copy;NotCo 2024</p>
         <a href="https://www.facebook.com/thenotcompany/" target="_blank">Facebook</a>
