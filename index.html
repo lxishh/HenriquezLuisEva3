@@ -3,52 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Evaluación 3</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script type="module" src="assets/js/script.js"></script>
     <script type="module" src="assets/js/firebase.js"></script>
 </head>
-<body class="modoclaro" id="idBody">
+<body>
+    <header id="pheader">
+        <h1>NotCo</h1>
+    </header>
 
-    <div id="formulario">
+    <nav id="pnav">
+        <ul class="opcionesmenu">
+            <li><a href="#impacto">Impacto</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#mision">Misión</a></li>
+            <li><a href="#video">Video explicativo</a></li>
+            <li><a href="#formulario">Contáctanos</a></li>
+        </ul>
+    </nav>
 
-    <h1>Formulario</h1>
-    <button type="button" id="btnContraste" class="contraste">Cambiar contraste</button>
-    <button type="button" id="btnFuente" class="fuente">Cambiar tamaño</button>
+    <main id="pmain">
 
-    <form>
+        <section id="impacto">
+            <h2>La producción de productos animales daña a nuestro planeta</h2>
+            <img src="assets/img/problema.png" width="400px 40px">
+            <p>Entonces, este es el tema: la producción mundial de alimentos, que se basa en la ganadería, usa más de un tercio de la superficie terrestre, y emite más CO2 que todo el transporte mundial en su conjunto. Sigue estándares ineficientes y abusivos, sin mencionar el mal uso del agua, la tierra y la energía.
 
-    <label for="nombre" id="label-nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre" required>
+                Es la causa principal de la deforestación, de los gases de efecto invernadero y, prácticamente, de toda la destrucción medioambiental conocida por las personas. Si queremos que nuestro planeta sobreviva, tenemos que cambiar la forma en la que se hace nuestra comida.</p>
+        </section>
 
-    <label for="correo">Correo:</label>
-    <input type="email" name="correo" id="correo" required>
+        <section id="historia">
+            <h2>Reinventamos la industria alimentaria</h2>
+            <img src="assets/img/historia.jpg" width="400px 40px">
+            <p>Cuando descubrimos que al sacar a los animales de la producción de alimentos protegeríamos al planeta, no nos preguntamos el por qué. Dijimos, Why Not.
 
-    <label for="contraseña">Contraseña:</label>
-    <input type="password" name="contraseña" id="contraseña" required>
+                La solución fue simple (para nuestros genios que aman la comida), crear un algoritmo que pueda aprender combinaciones infinitas de plantas para replicar los productos animales y que su sabor sea mucho mejor.</p>
+        </section>
 
-    <label for="telefono">Teléfono:</label>
-    <input type="number" name="telefono" id="telefono" min="8" minlength="8" required>
+        <section id="mision">
+            <h2>¿Cuál es la misión de NotCo?</h2>
+            <img src="assets/img/misión.png" width="400px 40px">
+            <p>Hacemos un llamado a todos los fans de la comida y también a la industria alimentaria. Estamos aquí para hacer que las productos en base a plantas sean accesibles para todos, en cualquier lugar. Cambiemos el día a día con un bocado delicioso y a buen precio a la vez.</p>
+        </section>
 
-    <label for="fecha">Fecha de nacimiento:</label>
-    <input type="date" name="fecha" id="fecha" required>
+        <section id="video">
+            <h2></h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/b7hqUBmKJR0?si=KSWoFi4Ttti2kT4a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
 
-    <label for="genero">Genero:</label>
-    <select name="genero" id="genero" required>
-        <option>Hombre</option>
-        <option>Mujer</option>
-        <option>Otro</option>
-    </select>
+        <section id="formulario">
+            <h2>Contáctanos</h2>
+            <form> 
+                <label for="nombre" id="label-nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre">
 
-    <label for="biografia">Breve descripción de ti:</label>
-    <textarea id="biografia"></textarea>
+                <label for="correo">Correo:</label>
+                <input type="email" name="correo" id="correo">
 
-    <label for="terminos">Acepta terminos y condiciones:</label>
-    <input type="checkbox" name="terminos" id="terminos" required>
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" name="contraseña" id="contraseña">
 
-    <button type="submit" id="btnRegistrar">Registrar</button>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" name="telefono" id="telefono">
 
-    </form>
-    </div>
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" name="fecha" id="fecha">
+
+                <label for="genero">Genero:</label>
+                <select name="genero" id="genero">
+                    <option>Hombre</option>
+                    <option>Mujer</option>
+                    <option>Otro</option>
+                </select>
+
+                <label for="biografia">Breve descripción de ti:</label>
+                <textarea id="biografia"></textarea>
+
+                <label for="terminos">Acepta terminos y condiciones:</label>
+                <input type="checkbox" name="terminos" id="terminos">
+
+                <button type="submit" id="btnRegistrar">Registrar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="pfooter">
+        <p>&copy;NotCo 2024</p>
+        <a href="https://www.facebook.com/thenotcompany/" target="_blank">Facebook</a>
+        <a href="https://https//www.instagram.com/thenotco/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/company/the-not-co-/" target="_blank">Linkedin</a>
+        <a href="https://www.youtube.com/channel/UCT2H7LfjkiIQpusjjVlclxg" target="_blank">Youtube</a>
+    </footer>
+
 </body>
 </html>
