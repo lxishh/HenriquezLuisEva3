@@ -66,6 +66,9 @@
 
         <!-- a continuacion se creara una SECCION de FORMULARIO, en la cual se incluiran LABELS, INPUT, SELECT, TEXTAREA Y BUTTON;
             cabe recalcar que se utilizaran distintos TIPOS de input para cada campo. -->
+
+        <!-- los parrafos dentro de cada label/input solamente se muestran cuando hay un error de validacion
+            debido a que ahi se le cambia el display a block y se muestra, en cambio por defecto la clase noDisplay viene en display:'none' -->
         <section id="formulario">
             <h2>¡Hazte socio/a de NotCo!</h2>
             <h3>Formulario de inscripción</h3>
@@ -74,15 +77,19 @@
 
                 <label for="nombre">Nombre*</label>
                 <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" required>
+                <p class="noDisplay" id="pnombre">Debes ingresar un nombre</p>
 
                 <label for="correo">Correo*</label>
                 <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo" required>
+                <p class="noDisplay" id="pcorreo">Debes ingresar un correo</p>
 
                 <label for="contraseña">Contraseña*</label>
                 <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu contraseña">
+                <p class="noDisplay" id="pcontraseña">Debes ingresar una contraseña</p>
 
                 <label for="telefono">Teléfono*</label>
                 <input type="tel" name="telefono" id="telefono" placeholder="Ingresa tu teléfono">
+                <p class="noDisplay" id="ptelefono">Debes ingresar 9 numeros para que sea valido.</p>
 
                 <label for="fecha">Fecha de nacimiento</label>
                 <input type="date" name="fecha" id="fecha">

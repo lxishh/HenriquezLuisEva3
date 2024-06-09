@@ -200,3 +200,10 @@ iframe{
 body.fontsize{
     font-size: x-large;
 }
+
+/* validacion de errores */
+
+p.noDisplay{
+    display: none;
+    color: red;
+}
