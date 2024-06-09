@@ -105,8 +105,27 @@ function validarTerminos(Campo){
 //CREATE
 const registrar = ()=>{
     let eNombre = document.getElementById("nombre");
+    let eCorreo = document.getElementById("correo");
+    let eContraseña = document.getElementById("contraseña");
+    let eTelefono = document.getElementById("telefono");
+    let eFecha = document.getElementById("fecha");
+    let eGenero = document.getElementById("genero");
+    let eAreatexto = document.getElementById("areatexto");
+    let eTerminos = document.getElementById("terminos");
+
     let vNombre = eNombre.value;
-    let objeto = {nombre:vNombre};
+    let vCorreo = eCorreo.value;
+    let vContraseña = eContraseña.value;
+    let vTelefono = eTelefono.value;
+    let vFecha = eFecha.value;
+    let vGenero = eGenero.value;
+    let vAreatexto = eAreatexto.value;
+    let vTerminos = eTerminos.checked;
+
+
+    let objeto = {nombre:vNombre, correo:vCorreo, contraseña:vContraseña, telefono:vTelefono,
+        fecha:vFecha, genero:vGenero, descripcion:vAreatexto, terminos:vTerminos};
+    
     // console.log(objeto)
 
     //Se usa la función de promesas.
@@ -125,6 +144,13 @@ const cargarDatos = ()=>{
         socios.forEach((socio)=>{
             estructura += "<tr>"
             estructura += "<td>" + socio.nombre + "</td>"
+            estructura += "<td>" + socio.correo + "</td>"
+            estructura += "<td>" + socio.contraseña + "</td>"
+            estructura += "<td>" + socio.telefono + "</td>"
+            estructura += "<td>" + socio.fecha + "</td>"
+            estructura += "<td>" + socio.genero + "</td>"
+            estructura += "<td>" + socio.areatexto + "</td>"
+            estructura += "<td>" + socio.terminos + "</td>"
             estructura += "<td><button id='UPD"+socio.id+"'>Modificar</button></td>";
             estructura += "<td><button id='DEL"+socio.id+"'>Eliminar</button></td>";
             estructura += "</tr>"
@@ -141,9 +167,9 @@ const cargarDatos = ()=>{
 
             let botonDEL = document.getElementById("DEL"+socio.id);
             botonDEL.addEventListener("click",()=>{
-                if (confirm("Está seguro que desea eliminar a:\n"+socio.nombre+"")){
+                if(confirm("Seguro que quiere eliminar a \nNombre: "+socio.nombre+"")){
                     eliminarSocio(socio.id).then(()=>{
-                        alert("Eliminado con éxito");
+                        alert("Eliminado con exito")
                         cargarDatos();
                     })
                 }
@@ -153,14 +179,34 @@ const cargarDatos = ()=>{
 }
 
 const actualizar = ()=>{
-    let eNombre = document.getElementById("UPDnombre")
-    let vNombre = eNombre.value
-
-    let objeto = {nombre:vNombre}
-    let id = document.getElementById("btnActualizar").value
-    
-    actualizarSocio(objeto,id).then(()=>{
-        alert("Se ha actualizado con éxito")
-        cargarDatos()
-    })
+    // Recuperar elemento
+   let eNombre = document.getElementById("UPDnombre")
+   let eCorreo = document.getElementById("UPDcorreo");
+   let eContraseña = document.getElementById("UPDcontraseña");
+   let eTelefono = document.getElementById("UPDtelefono");
+   let eFecha = document.getElementById("UPDfecha");
+   let eGenero = document.getElementById("UPDgenero");
+   let eAreatexto = document.getElementById("UPDareatexto");
+   let eTerminos = document.getElementById("UPDterminos");
+   // Recuperar el valor
+   let vNombre = eNombre.value;
+   let vCorreo = eCorreo.value;
+   let vContraseña = eContraseña.value;
+   let vTelefono = eTelefono.value;
+   let vFecha = eFecha.value;
+   let vGenero = eGenero.value;
+   let vAreatexto = eAreatexto.value;
+   let vTerminos = eTerminos.checked;
 }
+
+
+   let objeto = {nombre:vNombre, correo:vCorreo, contraseña:vContraseña, telefono:vTelefono,
+       fecha:vFecha, genero:vGenero, descripcion:vAreatexto, terminos:vTerminos};
+   let id = document.getElementById("btnActualizar")
+   
+   actualizarSocio(objeto,id).then(()=>{
+       alert("Se ha actualizado con éxito");
+       cargarDatos();
+   });
+
+
