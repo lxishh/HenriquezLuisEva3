@@ -35,7 +35,9 @@ function validar(){
     validarVacio('contraseña')
     validarLongitud('telefono', 9)
     validarTerminos('terminos')
-
+    validarVacio('fecha')
+    validarVacio('genero')
+    validarLongitud('areatexto', 9)
 }
 
 //se guarda el elemento/campo en la variable eNombre
