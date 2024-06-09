@@ -1,3 +1,5 @@
+import { eliminarSocio, registrarSocios, obtenerSocios, actualizarSocio } from "./promesas.js"
+
 console.log("Test")
 
 // Se agregar un LISTENER el cual espera a que CARGUE la pagina para posteriormente ejecutar lo que encuentre dentro de las llaves de la funcion flecha ( ()=> )
@@ -6,6 +8,9 @@ window.addEventListener("load", ()=>{
     document.getElementById("btnContraste").addEventListener("click", contraste);
     document.getElementById("btnFuente").addEventListener("click", fuente);
     document.getElementById("btnRegistrar").addEventListener("click", validar);
+    document.getElementById("btnRegistrar").addEventListener("click", registrar);
+    cargarDatos()
+    document.getElementById("btnActualizar").addEventListener("click", actualizar);
 })
 
 
@@ -37,7 +42,7 @@ function validar(){
     validarTerminos('terminos')
     validarVacio('fecha')
     validarVacio('genero')
-    validarLongitud('areatexto', 9)
+    validarVacio('areatexto')
 }
 
 //se guarda el elemento/campo en la variable eNombre
@@ -90,4 +95,72 @@ function validarTerminos(Campo){
     if(!eNombre.checked){
         alert('Debe aceptar los terminos y condiciones.')
     }
+}
+
+
+//A continuacion se crearan funciones para realizar el CRUD en firebase.
+
+//primero se importo desde firebase (ver linea 1)
+
+//CREATE
+const registrar = ()=>{
+    let eNombre = document.getElementById("nombre");
+    let vNombre = eNombre.value;
+    let objeto = {nombre:vNombre};
+    // console.log(objeto)
+
+    //Se usa la función de promesas.
+    registrarSocios(objeto).then(()=>{
+        alert("Registrado con éxito")
+    }).catch((r)=>{
+        alert("Ocurrió un error")
+        alert(r);
+    })
+}
+
+//READ
+const cargarDatos = ()=>{
+    obtenerSocios().then((socios)=>{
+        let estructura = "";
+        socios.forEach((socio)=>{
+            estructura += "<tr>"
+            estructura += "<td>" + socio.nombre + "</td>"
+            estructura += "<td><button id='UPD"+socio.id+"'>Modificar</button></td>";
+            estructura += "<td><button id='DEL"+socio.id+"'>Eliminar</button></td>";
+            estructura += "</tr>"
+        });
+        document.getElementById("tbDatos").innerHTML = estructura;
+        socios.forEach((socio)=>{
+
+            let botonUPD = document.getElementById("UPD"+socio.id);
+            botonUPD.addEventListener("click", ()=>{
+                let eNombre = document.getElementById("UPDnombre");
+                eNombre.value = socio.nombre;
+                document.getElementById("btnActualizar").value = socio.id;
+            })
+
+            let botonDEL = document.getElementById("DEL"+socio.id);
+            botonDEL.addEventListener("click",()=>{
+                if (confirm("Está seguro que desea eliminar a:\n"+socio.nombre+"")){
+                    eliminarSocio(socio.id).then(()=>{
+                        alert("Eliminado con éxito");
+                        cargarDatos();
+                    })
+                }
+            })
+        })
+    })
+}
+
+const actualizar = ()=>{
+    let eNombre = document.getElementById("UPDnombre")
+    let vNombre = eNombre.value
+
+    let objeto = {nombre:vNombre}
+    let id = document.getElementById("btnActualizar").value
+    
+    actualizarSocio(objeto,id).then(()=>{
+        alert("Se ha actualizado con éxito")
+        cargarDatos()
+    })
 }
